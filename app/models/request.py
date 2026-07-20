@@ -51,13 +51,14 @@ class Request(Base):
         default=RequestStatus.NEW
     )
 
-
     author: Mapped["Employee"] = relationship(
+        "Employee",
         back_populates="created_requests",
         foreign_keys=[author_id]
     )
 
     executor: Mapped["Employee"] = relationship(
+        "Employee",
         back_populates="assigned_requests",
         foreign_keys=[executor_id]
     )

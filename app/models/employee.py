@@ -32,11 +32,13 @@ class Employee(Base):
     )
 
     created_requests: Mapped[list["Request"]] = relationship(
+        "Request",
         back_populates="author",
-        foreign_keys="Request.author_id"
+        foreign_keys="[Request.author_id]"
     )
 
     assigned_requests: Mapped[list["Request"]] = relationship(
+        "Request",
         back_populates="executor",
-        foreign_keys="Request.executor_id"
+        foreign_keys="[Request.executor_id]"
     )
