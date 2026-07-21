@@ -228,3 +228,17 @@ __pycache__/
 
 .pytest_cache/
 .mypy_cache/
+
+# Database dumps
+*.sql
+*.dump
+
+# Logs
+*.log
+
+# Alembic
+alembic/versions/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
